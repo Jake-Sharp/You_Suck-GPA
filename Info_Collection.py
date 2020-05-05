@@ -1,3 +1,4 @@
+import GPA_Calc
 
 classes= []
 grades = []
@@ -24,7 +25,7 @@ def algorithmChoice():
     # Enter Number of Classes
 def classAttend():
     cNum = input("How Many lousy Classes do you Participate in?")
-    print("Only " +(cNum)+ " Classes? You need to ACTUALLY Try you lazy brat")
+    print("Only " +(cNum)+ " Classes? You need to ACTUALLY Try you lazy brat!")
     collect()
 
 
@@ -42,13 +43,12 @@ def collect():
         grade = grade.upper()
         grades.append(grade)
         y = y + 1
-    algType()
 
 def algType():
     if Local == True:
-        fourpoint()
+        GPA_Calc.fourpoint()
     elif Local == False:
-        percent()
+        GPA_Calc.percent()
 
 
 
