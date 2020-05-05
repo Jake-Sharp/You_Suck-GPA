@@ -11,10 +11,12 @@ def intro():
         if Continue == 'Y':
             print("What a waste of my time!")
             Info_Collection.algorithmChoice()
-        if Continue == 'N':
+        elif Continue == 'N':
             print("FUCKING LOSER!")
             print("NOBODY LOVES YOU!")
             break
+        elif Continue != 'Y' or Continue != 'N':
+            intro()
     
      
 intro()

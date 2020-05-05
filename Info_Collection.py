@@ -19,36 +19,44 @@ def algorithmChoice():
             print("What a Normie")
             Local = True
         if firstChoice == '2':
-            print("Ew really? where are you from? Wisconsin?")
+            print("Ew really? Where are you from? Wisconsin?")
         classAttend()
             
     # Enter Number of Classes
 def classAttend():
-    cNum = input("How Many lousy Classes do you Participate in?")
-    print("Only " +(cNum)+ " Classes? You need to ACTUALLY Try you lazy brat!")
-    collect()
+    cNum = int(input("How Many lousy Classes do you Participate in?"))
+    print("Only " +(str(cNum))+ " Classes? You need to ACTUALLY Try you lazy brat!")
+    collectClass()
 
 
     # Enter Grades 
-def collect():
+def collectClass():
     i = 0
-    while (i <= cNum):
+    print("Let's Collect Your Info")
+    for i in range(cNum):
         className = input("Enter Class Name: ")
         classes.append(className)
-        i = i +1
-
-    y = 0
-    while (y <= cNum):
-        grade = input("Enter Your Grade For Each Class Listed in Order (Letter Form): ")
+        i = i + 1
+    j = 0
+    for j in range(cNum):
+        if Local == True:
+            grade = input("Enter Your Grade For Each Class Listed in Order (Letter Form): ")
+        elif Local == False:
+            grade = input("Enter Your Grade For Each Class Listed in Order (2 Decimals): ")
         grade = grade.upper()
         grades.append(grade)
-        y = y + 1
+        j = j + 1
+    algType()
 
+    # Transfer Data
 def algType():
     if Local == True:
         GPA_Calc.fourpoint()
     elif Local == False:
         GPA_Calc.percent()
+
+
+        
 
 
 
