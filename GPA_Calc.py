@@ -1,51 +1,45 @@
 import Info_Collection
-#from Info_Collection import grades
+
 
 GPA = 0.0
-gpa = 0.00
+gpa = 0.0
 
 def fourpoint():
-    print("4.0")
     total = 0
-    i = 0
     for i in Info_Collection.grades:
         if i == "A+":
-            total = total + 4.0
+            total += 4.3
         elif i == "A":
-            total = total + 4.0
+            total += 4.0
         elif i == "A-":
-            total = total + 3.7
+            total += 3.7
         elif i == "B+":
-            total = total + 3.3
+            total += 3.3
         elif i == "B":
-            total = total + 3.0
+            total += 3.0
         elif i == "B-":
-            total = total + 2.7
+            total += 2.7
         elif i == "C+":
-            total = total + 2.3
+            total += 2.3
         elif i == "C":
-            total = total + 2.0
+            total += 2.0
         elif i == "C-":
-            total = total + 1.7
+            total += 1.7
+        elif i == "D+":
+            total += 1.3
         elif i == "D":
-            total = total + 1.0
-        i += 1
-    GPA = total / 6
-    respond()
+            total += 1.0
+        elif i == "D-":
+            total += 0.7
+
+    GPA = total / len(Info_Collection.classes)
+    print("Your GPA is: " + str(GPA))
     
 def percent():
-    print("%")
     Total = 0
-    i = 0
     for i in Info_Collection.grades:
-        Total = Total + int(Info_Collection.grades[i])
-        i += 1
-    gpa = Total / 6
-    respond()
-
-def respond():
-    if Info_Collection.Local == True:
-        print(GPA)
-    elif Info_Collection.Local == False:
-        print(gpa)
+        Total += Info_Collection.grades([i])
+        
+    gpa = Total / len(Info_Collection.classes)
+    print("Your GPA is: " + str(gpa) + " %")
     
