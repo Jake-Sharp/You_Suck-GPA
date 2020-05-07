@@ -36,13 +36,13 @@ def collectClass():
     
     for j in range(cNum):
         if Local == True:
-            grade = input("Enter Your Grade For Each Class Listed in Order (Letter Form): ")
+            grade = input("Enter Your Grade (Letter Form): ")
             grade = grade.upper()
             grades.append(grade)
         elif Local == False:
-            grade = input("Enter Your Grade For Each Class Listed in Order (2 Decimals): ")
-            grade = grade.upper()
+            grade = int(input("Enter Your Grade (2 Decimals): "))
             grades.append(grade)
+            
         j += 1
     algType()
 
