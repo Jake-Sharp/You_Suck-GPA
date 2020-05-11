@@ -33,13 +33,38 @@ def fourpoint():
             total += 0.7
 
     GPA = total / len(Info_Collection.classes)
-    print("Your GPA is: " + str(GPA))
+    respond()
     
 def percent():
-    Total = 0
-    for i in Info_Collection.grades:
-        Total += Info_Collection.grades([i])
-        
+    Total = sum(Info_Collection.grades)
     gpa = Total / len(Info_Collection.classes)
-    print("Your GPA is: " + str(gpa) + " %")
+    respond()
+
+def respond(): #Scratch this and return both without the question tomorrow
+    print("Would you Like to see your Weighted or Unweighted GPA?")
+    print("1 - Weighted")
+    print("2 - Unweighted")
+    print("3 - Go Back")
+    print("4 - Quit")
+    resChoice = ' '
+    while resChoice != '1' or resChoice !='2' or resChoice != '3' or resChoice !='4':
+        resChoice = input()
+        if resChoice == '1':
+            if Info_Collection.Local == True:
+                print("Your GPA is: " + str(GPA + Info_Collection.weightAdd))
+            if Info_Collection.Local == False:
+                print("Your GPA is: " + str(gpa + Info_Collection.weightAdd) + " %")
+        elif resChoice == '2':
+            if Info_Collection.Local == True:
+                print("Your GPA is: " + str(GPA))
+            if Info_Collection.Local == False:
+                print("Your GPA is: " + str(gpa) + " %")
+        elif resChoice == '3':
+            print("Going Back!")
+            weight()
+        elif resChoice == '4':
+            print("Goodbye!")
+            break
+
+    
     

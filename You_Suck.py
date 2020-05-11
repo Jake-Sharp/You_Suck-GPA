@@ -3,20 +3,23 @@ import time
 
 # Intro
 def intro():
-    print("Welcome to reality Loser")
-    print("Would you like to Continue? (Y/N)")
+    print("Welcome to your GPA Calculator")
+    print("Would you like to Continue?")
+    print("1 - Yes")
+    print("2 - No")
+    print("3 - Quit")
     Continue = ' '
-    while Continue != 'Y' or Continue !='N':
+    while Continue != '1' or Continue !='2' or Continue !='3':
         Continue = input()
-        if Continue == 'Y':
-            print("What a waste of my time!")
+        if Continue == '1':
+            print("Let's Continue!")
             Info_Collection.algorithmChoice()
-        elif Continue == 'N':
-            print("FRICKING POSER!")
-            print("NOBODY LOVES YOU!")
-            break
-        elif Continue != 'Y' or Continue != 'N':
+        elif Continue == '2':
+            print("Restart")
             intro()
+        elif Continue == '3':
+            print("Goodbye!")
+            break
     
      
 intro()
