@@ -6,6 +6,7 @@ gpa = 0.0
 
 def fourpoint():
     total = 0
+    print(Info_Collection.grades)
     for i in Info_Collection.grades:
         if i == "A+":
             total += 4.3
@@ -32,7 +33,7 @@ def fourpoint():
         elif i == "D-":
             total += 0.7
 
-    GPA = total / len(Info_Collection.classes)
+        GPA = total / len(Info_Collection.classes)
     respond()
     
 def percent():
