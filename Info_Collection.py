@@ -3,7 +3,7 @@ import GPA_Calc
 classes= []
 grades = []
 clNum = 0
-weightAdd = 0
+weightAdd = 1
 weightAP = ' '
 Local = False
        
@@ -84,10 +84,10 @@ def weight():
         if APchoice == '1':
             weightAP = int(input("How many AP Classes do you participate in?: "))
             if Local == True:
-                weightAdd = weightAP
+                weightAdd = (1 + weightAP)
                 GPA_Calc.fourpoint()
             elif Local == False:
-                weightAdd = (10) * (weightAP)
+                weightAdd = (10 * (weightAP))
                 GPA_Calc.percent() 
         elif APchoice == '2':
             print("Let's Continue")
