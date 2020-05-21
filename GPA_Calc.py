@@ -44,32 +44,6 @@ def percent():
     print("Your Unweighted GPA is: " + str(gpa) + "%")
     print("Your Weighted GPA is: " + str(gpa + (Info_Collection.weightAdd * 10)) + "%")
 
-def respond(): #Scratch this and return both without the question tomorrow
-    print("Would you Like to see your Weighted or Unweighted GPA?")
-    print("1 - Weighted")
-    print("2 - Unweighted")
-    print("3 - Go Back")
-    print("4 - Quit")
-    print(Info_Collection.Local)
-    resChoice = ' '
-    while resChoice != '1' or resChoice !='2' or resChoice != '3' or resChoice !='4':
-        resChoice = input()
-        if resChoice == '1':
-            if Info_Collection.Local == True:
-                print("Your GPA is: " + str(GPA + Info_Collection.weightAdd))
-            if Info_Collection.Local == False:
-                print("Your GPA is: " + str(gpa + Info_Collection.weightAdd) + " %")
-        elif resChoice == '2':
-            if Info_Collection.Local == True:
-                print("Your GPA is: " + str(GPA))
-            if Info_Collection.Local == False:
-                print("Your GPA is: " + str(gpa) + " %")
-        elif resChoice == '3':
-            print("Going Back!")
-            weight()
-        elif resChoice == '4':
-            print("Goodbye!")
-            break
 
     
     
